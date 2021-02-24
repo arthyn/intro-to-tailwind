@@ -1,0 +1,145 @@
+import { future } from '@mdx-deck/themes'
+import { duotoneSpace } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { Prism } from 'react-syntax-highlighter'
+
+import { getLanguage } from '@mdx-deck/themes/syntax-highlighter'
+
+export const pre = props => props.children
+
+export const code = props => {
+  const language = getLanguage(props.className)
+  return <Prism language={language} style={duotoneSpace} {...props} />
+}
+
+export const theme = {
+    ...future,
+    components: {
+        pre,
+        code
+    }
+};
+
+# Intro to Tailwind CSS
+
+**Hunter Miller** 
+
+Senior Software Engineer @ This Dot
+
+---
+
+# What is Tailwind?
+
+<Steps>
+
+- just CSS
+- plus a design system
+- looks like `class="py-4 text-red-600"`
+
+</Steps>
+
+<Notes>
+
+- just CSS
+    - utility css framework
+    - sits on top of current *CSS* setup, parsed by postcss
+    - set of classes built from config
+- design system
+    - well designed system of theming values which enables building cohesive designs
+- Verbose HTML (which makes it not as pretty)
+
+</Notes>
+
+---
+
+# What Tailwind Isn't
+
+<Steps>
+
+- magic
+- the solution to all your problems
+- the solution for every CSS project
+- the only way to do CSS
+- only for tech "bros"
+
+</Steps>
+
+---
+
+# Utility CSS?
+
+```css
+.flex {
+    display: flex;
+}
+
+.py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+```
+
+<Notes>
+
+- a framework which uses single classes almost exclusively to apply single CSS properties to an element. 
+- We group repeated classes together with either a component or a component class.
+- component classes are placed before utilities so that they are easily overidden, preventing specificity wars.
+
+</Notes>
+
+---
+
+# Composing Classes
+
+```css
+.button {
+    @apply flex items-center justify-center rounded-md bg-black text-white;
+}
+```
+
+or through components
+
+---
+
+# Anatomy of a Tailwind Class
+
+### Core
+
+`text-red`
+
+---
+
+# Anatomy of a Tailwind Class
+
+### Variant + Core
+
+`hover:text-red`
+
+---
+
+# Anatomy of a Tailwind Class
+
+### Breakpoint + Variant + Core
+
+`md:hover:text-red`
+
+---
+
+# Let's Dive In
+
+~30ish mins to style a Twitter clone, can we do it?
+
+---
+
+# Why Tailwind?
+
+---
+
+# Useful Resources
+
+- https://tailwindcss.com/
+- https://play.tailwindcss.com/
+- @adamwathan on Twitter
+
+---
+
+# Thank you!
